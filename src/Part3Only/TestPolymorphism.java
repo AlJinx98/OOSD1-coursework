@@ -14,10 +14,10 @@ public class TestPolymorphism {
 
         System.out.println(s.getPriceVAT());
         s.setPrice(20);
-        System.out.println(s.getPriceVAT());
+        System.out.println(s.getPriceVAT());//?
 
 
-        System.out.println("Printing item stock information: ");
+        System.out.println("Printing item stock information: "); // prints text before the item desc 
         System.out.println(s.classToString());
 
         System.out.println("-------------------------------------------------------------");
@@ -26,7 +26,7 @@ public class TestPolymorphism {
     public static void main(String[] args) {
         StockItem[] s = new StockItem[4];
 
-        Engine e = new Engine("EG1", 5, 50, 200);
+        Engine e = new Engine("EG1", 5, 50, 200); // Returns the item code, stock, price and descrition 
         Lights l = new Lights("LI2", 6, 10, 40.5);
         NavSys n = new NavSys("NS3", 2, 60);
         Seats seat = new Seats("ST4", 12, 5, "Leather");
@@ -40,4 +40,4 @@ public class TestPolymorphism {
             itemInstance(s[i]);
         }
     }
-}
+} //Bit lost on this one, bit beyond me 
