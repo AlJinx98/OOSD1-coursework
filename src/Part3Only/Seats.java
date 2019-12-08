@@ -1,4 +1,4 @@
-package Part3Only;
+package Part3Only; //Same as Engine, Lights and VanSys
 
 public class Seats extends StockItem {
     String material;
