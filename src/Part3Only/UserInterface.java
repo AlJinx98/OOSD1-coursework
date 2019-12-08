@@ -1,4 +1,4 @@
-package Part3Only;
+package Part3Only; //Interface used to add, Remove or adjust entries 
 
 import java.util.Scanner;
 import java.util.Arrays;
@@ -17,7 +17,7 @@ public class UserInterface {
         int freePointer = 0;
 
 
-        while (!quit) {
+        while (!quit) { //While loop
             // get user input
             System.out.println("OPTIONS: \n1. New NavSys \n2. New Engine \n3. New Light \n4. New Seats \n5. New Generic Item \n6. Edit Item \n0. Quit programme");
             int option = input.nextInt();
@@ -25,7 +25,7 @@ public class UserInterface {
             switch (option) {
                 case 0:
                     quit = true;
-                    break;
+                    break; //Closes interface when quitted?
 
                 case 1:
                     if (freePointer > 0) {
@@ -40,7 +40,7 @@ public class UserInterface {
                     items[freePointer] = tempNav;
                     freePointer++;
                     break;
-
+                            //Allows user to add a new navsys along with details 
                 case 2:
                     if (freePointer > 10) {
                         System.out.println("List is full. Please choose a different option.");
@@ -55,7 +55,7 @@ public class UserInterface {
                     items[freePointer] = tempEngine;
                     freePointer++;
                     break;
-
+                        //allows user to add new engine along with details        
                 case 3:
                     if (freePointer > 10) {
                         System.out.println("List is full. Please choose a different option.");
@@ -70,7 +70,7 @@ public class UserInterface {
                     items[freePointer] = tempLights;
                     freePointer++;
                     break;
-
+                            //add new lights with details 
                 case 4:
                     if (freePointer > 10) {
                         System.out.println("List is full. Please choose a different option.");
@@ -85,7 +85,7 @@ public class UserInterface {
                     items[freePointer] = tempSeats;
                     freePointer++;
                     break;
-
+                            //add new seats 
                 case 5:
                     if (freePointer > 10) {
                         System.out.println("List is full. Please choose a different option.");
@@ -99,21 +99,21 @@ public class UserInterface {
                     items[freePointer] = tempItem;
                     freePointer++;
                     break;
-
+                                  //Gen?
                 case 6:
                     System.out.println("Please select which item to edit : ");
                     for (int i = 0; i < freePointer; i++) {
                         int indexValue = i + 1;
                         System.out.println(indexValue + ". " + items[i].getStockName() + " , " + items[i].getFixedStockCode());
                     }
-
+                        //Allows user to edit an older entry using a for loop?
                     int choice = input.nextInt() - 1;
 
                     System.out.println(items[choice].getStockName());
                     System.out.println("Select option : \n1. Get Stock Information \n2. Add Stock \n3. Sell Stock \n4. Set Quantity \n5. Set Price");
                     int editChoice = input.nextInt();
 
-                    switch (editChoice) {
+                    switch (editChoice) { 
                         case 1:
                             System.out.println(items[choice].classToString());
                             break;
@@ -129,7 +129,7 @@ public class UserInterface {
                         case 5:
                             System.out.println("Input value to set : ");
                             items[choice].setPrice(input.nextDouble());
-                    }
+                    } //allows user to edit entry with a switch loop? 
             }
         }
     }
